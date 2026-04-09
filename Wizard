@@ -1,0 +1,18 @@
+#!/bin/bash
+
+alias cp="cp -iR"
+
+cp Configs/ASM.toml ~/.config/asm-lsp/global.toml
+
+cp Configs/FastFetch.jsonc ~/.config/fastfetch/config.jsonc
+cp Configs/NeoVim.lua ~/.config/nvim/init.lua
+cp Configs/HTop ~/.config/htop/htoprc
+
+cp Configs/Zed.jsonc ~/.config/zed/settings.json
+
+sudo cp -i Protected/SUDo’ers /etc/sudoers
+sudo chown root /etc/sudoers
+sudo chmod 0440 /etc/sudoers
+
+cp Configs/ZSH ~/.zshrc
+

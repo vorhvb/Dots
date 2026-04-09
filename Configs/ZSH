@@ -1,0 +1,118 @@
+# .zshrc
+
+export PROMPT="%F{3}%~%f %% "
+
+# Environment
+export LC_ALL=en_GB.UTF-8
+export LANG=en_GB.UTF-8
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/opt/homebrew/share/qt/libexec:$PATH:."
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+
+export EDITOR="nvim"
+export VISUAL="cot"
+
+setopt PUSHD_SILENT
+
+# Aliases
+alias la="ls -A"
+alias ll="ls -l"
+
+alias cp="cp -iR"
+alias mv="mv -i"
+
+alias rm="rm -I"
+alias rr="rm -Ir"
+alias rf="rm -If"
+
+alias o="open"
+alias ql="qlmanage -p"
+alias copy="pbcopy"
+alias paste="pbpaste"
+
+alias edit="$EDITOR"
+alias visual="$VISUAL"
+
+setopt AUTO_PUSHD
+
+alias /="cd /"
+alias vols="cd /Volumes"
+alias sys="cd /System"
+alias lib="cd /Library"
+alias apps="cd /Applications"
+
+alias usr="cd /usr"
+alias ul="cd /usr/local"
+alias var="cd /var"
+alias priv="cd /private"
+alias opt="cd /opt"
+alias tmp="cd /tmp"
+
+alias ~="cd ~"
+alias desk="cd ~/Desktop"
+alias docs="cd ~/Documents"
+alias downl="cd ~/Downloads"
+alias usrlib="cd ~/Library"
+
+alias back="popd"
+alias up="cd .."
+alias 2up="cd ../.."
+alias 3up="cd ../../.."
+
+# Colors
+export CLICOLOR=1
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias xxd="xxd -R always"
+
+export LSCOLORS="dxexxxxxcxxxxxxxxxxxxxxx"
+export LS_COLORS="di=33:ex=32:ln=34:or=31"
+
+export GREP_COLOR="33"
+
+# Autocompletion
+autoload compinit
+
+compinit -u
+
+setopt extendedglob
+setopt nomatch
+
+zstyle ":completion:*" menu select
+zstyle ":completion:*" verbose false
+
+# Functions
+finder ()
+{
+	if [ $# -eq 0 ]; then
+		open -a Finder .
+	else
+		open -a Finder "$@"
+	fi
+}
+
+# History
+HISTSIZE=1000000000
+SAVEHIST=1000000000
+
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+
+setopt HIST_IGNORE_SPACE
+
+setopt SHARE_HISTORY
+
+setopt HIST_REDUCE_BLANKS
+
+# Homebrew
+export HOMEBREW_INSTALL_BADGE="🧾"
+
+export HOMEBREW_UPGRADE_GREEDY=1
+export HOMEBREW_DOWNLOAD_CONCURRENCY=auto
+
+export HOMEBREW_NO_ENV_HINTS=1

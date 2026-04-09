@@ -1,0 +1,14 @@
+# SUDo’ers
+
+Defaults lecture = always
+Defaults lecture_file = /etc/sudo_lecture
+
+# Users
+root	ALL = (ALL) ALL
+%admin	ALL = (ALL) ALL
+Defaults timestamp_timeout = 1
+
+# Fun
+Defaults pwfeedback
+Defaults insults
+

@@ -1,0 +1,39 @@
+// FastFetch
+
+{
+	"display":
+	{
+		"color":
+		{
+			"title": "default",
+			"keys": "yellow"
+		},
+		"percent":
+		{
+			"color":
+			{
+				"red": "red",
+				"yellow": "yellow"
+			}
+		}
+	},
+
+	"modules": [
+		"title",
+		"separator",
+		"host",
+		"os",
+		"kernel",
+		"separator",
+		"wm",
+		"de",
+		"shell",
+		"editor",
+		"separator",
+		"cpuusage",
+		"memory",
+		"disk",
+		"break",
+		"colors"
+	]
+}
